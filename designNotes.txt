@@ -1,0 +1,63 @@
+/*  Project 4 design notes  */
+
+
+InsurancePolicy    (Parent class)
+  ||
+  \/
+Home     (Child class)
+Auto     (Child class)
+Life     (Child class)
+
+
+InsurancePolicy Class::
+Knows: name, commission
+Does: access methods for data members, overloads << stream operator, 
+      declares pure virtual functions to be overwritten
+
+Home Class::
+Knows: square feet, dwelling contents, and liabiliat coverage
+Does: calculates commission for sale, access methods, overwrites print function
+
+Auto Class::
+Knows: make & model, VIN, liability and collision coverage
+Does: calculates commission for sale, access methods, overwrites print function
+
+Life Class::
+Knows: age, dependent, and term life coverage
+Does: calculates commission for sale, access methods, overwrites print function
+
+
+
+
+
+
+Employee     (Parent class)
+  ||
+  \/
+Salesperson  (Child class)
+Manager      (Child class)
+
+
+Employee Class::
+Knows: name, base salary, total salary, commission and total commission
+Does: adds insurance sale, prints sales, declares virtual calc functions
+
+Salesperson Class::
+Knows: nothing (inherits all data members from parent)
+Does: calculates commission and salary total
+
+Manager Class::
+Knows: index of subordinates, subordinate commission total
+Does: calculates total salary/commission, adds subordinate index, 
+      access methods, prints subordinates' sales
+
+
+
+
+
+InsurancePolicy is a nested class in the Employees class; easy access to vector
+
+Commission is calculated by going through vector<InsurancePolicy *> and summing the commissions
+
+List all sales should output insurance policies with overloaded stream output
+
